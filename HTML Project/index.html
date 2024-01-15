@@ -8,6 +8,32 @@
 <body>
     <li>apple</li>
     <li>lemon</li>
+    <p id="ptag">stockNode</p>
+    <div id="app">
+        <h1 style="background-color: greenyellow;">{{message}}</h1>
+        <textarea v-model="message"></textarea>
+        <button v-show="message" onclick="location.href='end_page.html'">send item</button>
+        <p v-show="message">hello</p>
+        <p>{{counter}}</p>
+        <button id="increase-button" v-on:click="incr()">+</button>
+        <button id="decrease-button" v-on:click="decr()">-</button>
+    </div>
+    <div id="app">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+    <script>
+        document.getElementById("ptag").innerHTML = "doc " + 3
+        new Vue({
+            el: '#app',
+            data: {message: 'greetings', counter: 0},
+            methods: {
+                incr() {this.counter = this.counter + 1},
+                decr() {this.counter = this.counter - 1}
+            }
+        });
+        let jsonString = JSON.stringify(Object.assign({}, counter))
+        console.log(jsonString)
+    </script>
     
 </body>
 </html>
